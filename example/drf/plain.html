@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=0"/>
+    <title>{{meta.pagetitle}} | {{meta.siteTitle}}</title>
+    <meta name="description" content="{{meta.description}}" >
+
+    <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+    <meta name="dcterms.source" content="{{content.websourcepath}}"/>
+
+{{! add here sytelsheets for your css framework https://en.wikipedia.org/wiki/CSS_framework  }}
+
+
+    <link rel="stylesheet" type="text/css" href="{{meta.baseurl}}source/drf/drf-custom-css.css">
+
+<style type="text/css">
+/* links on this page */
+#nav ul li a[href="./{{source.slugs.dirlimb}}"] {
+    color: #4d99e0;
+}
+</style>
+
+{{#meta.css}}
+  {{#url}}
+    <link rel="stylesheet" type="text/css" href="{{{url}}}">
+  {{/url}}
+  {{#inline}}
+    <style>
+        {{{inline}}}
+    </style>
+  {{/inline}}
+{{/meta.css}}
+
+{{{content.additionalhead}}}
+</head>
+<body class="d2c_{{source.lemma}} {{meta.d2c}}" >
+
+<div class="container">
+    <div id="header" class="">
+    <header>
+        <div id="navigation" role="navigation" >
+        <nav>
+            <article>{{{content.navigation}}}</article>
+        </nav>
+        </div>
+    </header>
+    </div>
+
+    <div id="main" class="" role="main" >
+        <section>
+            <article>{{{content.main}}}</article>
+        </section>
+    </div>
+
+    <div id="footer" class="" role="contentinfo" >
+    <footer>
+        {{{content.footer}}}
+
+        <p>Last changed: {{content.source_git_meta.date}} by {{content.source_git_meta.name}}</p>
+        {{#meta.webwrite}}
+        <div id="drf-edit" class="" >
+            <a href="#drf-edit" style="display: none;" accesskey="e" >edit</a>
+        </div>
+        {{/meta.webwrite}}
+    </footer>
+    </div>
+</div>
+
+{{! add here js files }}
+
+
+    <script src="{{meta.baseurl}}source/drf/drf-custom-js.js" type="text/javascript"></script>
+
+{{#meta.jquery}}
+    <script type="text/javascript">
+        $(document).ready(function() { 
+            {{meta.jquery}}
+        });
+    </script>
+{{/meta.jquery}}
+{{#meta.js}}
+  {{#url}}
+    <script src="{{{url}}}" type="text/javascript"></script>
+  {{/url}}
+  {{#inline}}
+    <script type="text/javascript">
+        {{{inline}}}
+    </script>
+  {{/inline}} 
+{{/meta.js}}
+{{{content.additionalbody}}}
+</body>
+</html>
