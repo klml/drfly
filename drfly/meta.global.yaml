@@ -1,0 +1,17 @@
+gitsource: false
+sourceexclude: '.git'
+publish: true
+separator: "\n#!yaml"
+namespaceseparator: ":"
+template: plain.html
+dateformat: '%Y-%m-%d %H:%M'
+extension:
+    source: .md
+directory:
+    area: ./example/area
+    html: ./html
+    json: ./json
+markdown:
+    extensions: ['extra', 'toc' , 'wikilinks', 'sane_lists', 'admonition']
+    extension_configs: { 'toc': { 'anchorlink' : True , 'toc_depth' : '6' } }
+    area_extensions: ['extra', 'wikilinks', 'sane_lists', 'admonition']
