@@ -5,6 +5,10 @@ separator: "\n#!yaml"
 namespaceseparator: ":"
 template: plain.html
 dateformat: '%Y-%m-%d %H:%M'
+webhook:
+    gitpull: true
+    render: true
+    renderall: false
 extension:
     source: .md
 directory:

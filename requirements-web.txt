@@ -1,0 +1,6 @@
+Markdown
+markdown-extra
+pystache
+PyYAML
+GitPython
+web.py
