@@ -33,7 +33,7 @@ def gitpull( sourcedirectory ):
     # cant do this with a webservice,
     # gitpull should also work without webhook.py depending http://webpy.org/ 
     for updated_file in updated_files:
-        parse_result = build_page.build_html_json( sourcedirectory + os.sep + updated_file ,  sourcedirectory )
+        parse_result = build_page.check_page_is_area( updated_file ,  sourcedirectory )
         result.extend( parse_result )
     return result
 
