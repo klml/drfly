@@ -69,7 +69,7 @@ def build_html_json( sourcefile_path , source_directory ):
 
 
     if not os.path.isfile( sourcefile_path ) :
-        return [ 'the file does not exist' ]
+        return [ sourcefile_path + ' does not exist' ]
 
     ## prevent directory traversal attack like ../../../index.md
     source_directory_realpath = os.path.realpath( source_directory )
