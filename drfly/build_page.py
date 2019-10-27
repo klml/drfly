@@ -88,8 +88,9 @@ def build_html_json( sourcefile_path , source_directory ):
         tmplData['content']['source_git_meta']  = get_meta_area.get_source_git_meta( sourcefile_path, source_directory  )
 
         tmplData['content']['main']             = render_prose_to_html( sourcefile_path, meta, proserialsplit )
-        print( render_html_into_template( meta, tmplData ) )
-        
+        result = render_html_into_template( meta, tmplData )
+        return result
+
     else:
         return [ sourcefile_path +  ' is an illegal path' ]
 
@@ -114,4 +115,5 @@ if __name__ == "__main__":
     source_directory    = os.getcwd()
 
     result = check_page_is_area( sourcefile_path , source_directory )
+    print( "result" )
     print( result )
