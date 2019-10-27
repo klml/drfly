@@ -34,7 +34,7 @@ def render_prose_to_html( sourcefile, cfg, proserialsplit ):
     return content_html
 
 
-def render_html_into_template( config, tmplData ):
+def render_html_into_template( source_directory, tmplData ):
 
     result = []
 
@@ -42,7 +42,7 @@ def render_html_into_template( config, tmplData ):
 
         renderer = pystache.Renderer()
 
-        html_html = renderer.render_path( tmplData['meta']['template'] , tmplData )
+        html_html = renderer.render_path( source_directory + os.sep + tmplData['meta']['template'] , tmplData )
 
         html_path = tmplData['meta']['directory']['html'] + os.sep + tmplData['content']['slugs']['html']
 
@@ -88,7 +88,7 @@ def build_html_json( sourcefile_path , source_directory ):
         tmplData['content']['source_git_meta']  = get_meta_area.get_source_git_meta( sourcefile_path, source_directory  )
 
         tmplData['content']['main']             = render_prose_to_html( sourcefile_path, meta, proserialsplit )
-        result = render_html_into_template( meta, tmplData )
+        result = render_html_into_template( source_directory, tmplData )
         return result
 
     else:
