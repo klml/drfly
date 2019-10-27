@@ -24,7 +24,7 @@ cfg = config.config( source_directory )
 
 
 class git_pull:
-    def GET(self):
+    def POST(self):
         if cfg['webhook']['gitpull']:
             result = gitpull.gitpull( source_directory )
             return result 
