@@ -37,7 +37,7 @@ def get_meta( sourcefile, source_directory_realpath,  proserial, meta ):
 
     ## check if source file includes meta date 
     try: 
-        proserial_meta = yaml.load( proserial[1] )
+        proserial_meta = yaml.load( proserial[1] , Loader=yaml.FullLoader )
         meta.update( proserial_meta )
 
     ## sourcefile-meta is no valid yaml
