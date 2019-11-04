@@ -85,7 +85,7 @@ def build_html_json( sourcefile_path , source_directory ):
         # template data
         tmplData = {}
         tmplData['meta']                        = get_meta_area.get_html_title_from_first_heading( proserialsplit, meta )
-        tmplData['content']                     = get_meta_area.get_areas ( meta_path, meta['sourceexclude'], meta['markdown'] )
+        tmplData['content']                     = get_meta_area.get_areas ( meta_path, meta['sourceexclude'], meta['markdown'] , cfg )
         tmplData['content']['slugs']            = get_meta_area.get_slugs ( sourcefile_path, source_directory_realpath, meta['namespaceseparator'] )
         tmplData['content']['source_git_meta']  = get_meta_area.get_source_git_meta( sourcefile_path, source_directory  )
 

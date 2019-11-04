@@ -64,7 +64,7 @@ def get_html_title_from_first_heading( proserial, meta ):
     return meta
 
 
-def get_areas( config_directory_area, config_sourceexclude, config_markdown ):
+def get_areas( config_directory_area, config_sourceexclude, config_markdown, cfg ):
 
     ## areas
     # include sourcefiles as  in templates (for menus, sidebars, trackingpixels). 
@@ -78,7 +78,10 @@ def get_areas( config_directory_area, config_sourceexclude, config_markdown ):
             with codecs.open( os.path.join(dirName, filename) , 'r', encoding="utf-8") as openareafile:
                 areamd = openareafile.read()
 
-            md = markdown.Markdown(extensions= config_markdown['area_extensions'])
+            md = markdown.Markdown(
+            extensions= config_markdown['area_extensions'],
+            extension_configs = cfg['markdown']['extension_configs']
+            )
             areahtml = md.convert(areamd)
             
             areas[ os.path.splitext( filename )[0] ] = areahtml
