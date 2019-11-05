@@ -17,5 +17,5 @@ directory:
     json: ./json
 markdown:
     extensions: ['extra', 'toc' , 'wikilinks', 'sane_lists', 'admonition']
-    extension_configs: { 'toc': { 'anchorlink' : True , 'toc_depth' : '6' } }
+    extension_configs: { 'toc': { 'anchorlink' : True , 'toc_depth' : '6' }, 'wikilinks' : { 'end_url' : '' } }
     area_extensions: ['extra', 'wikilinks', 'sane_lists', 'admonition']
