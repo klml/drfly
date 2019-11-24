@@ -1,5 +1,6 @@
 Markdown
 markdown-extra
+mdx_wikilink_plus
 pystache
 PyYAML
 GitPython

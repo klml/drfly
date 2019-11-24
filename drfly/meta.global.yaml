@@ -16,6 +16,6 @@ directory:
     html: ./html
     json: ./json
 markdown:
-    extensions: ['extra', 'toc' , 'wikilinks', 'sane_lists', 'admonition']
-    extension_configs: { 'toc': { 'anchorlink' : True , 'toc_depth' : '6' }, 'wikilinks' : { 'end_url' : '' } }
-    area_extensions: ['extra', 'wikilinks', 'sane_lists', 'admonition']
+    extensions: ['extra', 'toc', 'mdx_wikilink_plus', 'sane_lists', 'admonition']
+    extension_configs: { 'toc': { 'anchorlink' : True , 'toc_depth' : '6' }, 'mdx_wikilink_plus':  { 'end_url' : '', 'url_case': 'lowercase' } }
+    area_extensions: ['extra', 'mdx_wikilink_plus', 'sane_lists', 'admonition']
