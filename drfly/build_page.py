@@ -77,7 +77,7 @@ def build_html_json( sourcefile_path , source_directory ):
 
         proserialsplit                         = proserial.splitproseserial( sourcefile_path, cfg['separator'] )
         if proserialsplit is False :
-            return [ sourcefile + ' is not a text file']
+            return [ sourcefile_path + ' is not a text file']
 
         meta                                    = get_meta_area.get_meta  ( sourcefile_path, source_directory_realpath, proserialsplit, cfg )
         meta_path                               = source_directory_realpath + os.sep + meta['directory']['area']
