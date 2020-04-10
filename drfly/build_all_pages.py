@@ -19,7 +19,7 @@ def build_all( source_directory ):
 
         ## exclude directories
         [subdirList.remove(d) for d in list(subdirList) if d in cfg['sourceexclude'] ]
-        [subdirList.remove(d) for d in list(subdirList) if d in cfg['template'] ]
+        [subdirList.remove(d) for d in list(subdirList) if d is cfg['template'] ]
 
         for filename in fileList:
             sourcefile = os.path.realpath( os.path.join(dirName, filename) )
