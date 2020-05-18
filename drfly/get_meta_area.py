@@ -125,7 +125,7 @@ def get_source_git_meta( sourcefile, config_source, source_git_meta_meta ):
         source_git_meta['last_name']     = repo.git.log('-1', '--format=' + source_git_meta_meta['last_name_format'] , sourcefile )
         source_git_meta['last_email']    = repo.git.log('-1', '--format=' + source_git_meta_meta['last_email_format'] , sourcefile )
         source_git_meta['last_date']     = repo.git.log('-1', '--format=' + source_git_meta_meta['last_date_format'] , sourcefile )
-        source_git_meta['last_subject']  = repo.git.log('-1', '--format=' + source_git_meta_meta['last_subject'],  sourcefile )
+        source_git_meta['last_subject']  = repo.git.log('-1', '--format=' + source_git_meta_meta['last_subject_format'],  sourcefile )
 
         # TODO oldest_*
 
