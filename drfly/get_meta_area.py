@@ -115,17 +115,17 @@ def get_slugs ( sourcefile, source_directory_realpath, config_namespaceseparator
     return slugs
 
 
-def get_source_git_meta( sourcefile, config_source ):
+def get_source_git_meta( sourcefile, config_source, source_git_meta_meta ):
 
     try: 
         repo = git.Repo( config_source, search_parent_directories=True )
     
         # https://git-scm.com/docs/pretty-formats
         source_git_meta = {}
-        source_git_meta['last_name']     = repo.git.log('-1', '--format=%cn', sourcefile )
-        source_git_meta['last_email']    = repo.git.log('-1', '--format=%ce', sourcefile )
-        source_git_meta['last_date']     = repo.git.log('-1', '--format=%ai', sourcefile )
-        source_git_meta['last_subject']  = repo.git.log('-1', '--format=%s',  sourcefile )
+        source_git_meta['last_name']     = repo.git.log('-1', '--format=' + source_git_meta_meta['last_name_format'] , sourcefile )
+        source_git_meta['last_email']    = repo.git.log('-1', '--format=' + source_git_meta_meta['last_email_format'] , sourcefile )
+        source_git_meta['last_date']     = repo.git.log('-1', '--format=' + source_git_meta_meta['last_date_format'] , sourcefile )
+        source_git_meta['last_subject']  = repo.git.log('-1', '--format=' + source_git_meta_meta['last_subject'],  sourcefile )
 
         # TODO oldest_*
 

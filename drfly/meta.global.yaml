@@ -15,6 +15,11 @@ directory:
     area: ./example/area
     html: ./html
     json: ./json
+source_git_meta: # https://git-scm.com/docs/pretty-formats
+    last_name_format:    '%cn'
+    last_email_format:   '%ce'
+    last_date_format:    '%ai'
+    last_subject_format: '%s'
 markdown:
     extensions: ['extra', 'toc', 'mdx_wikilink_plus', 'sane_lists', 'admonition']
     extension_configs: { 'toc': { 'anchorlink' : True , 'toc_depth' : '6' }, 'mdx_wikilink_plus':  { 'end_url' : '', 'url_case': 'lowercase' } }
