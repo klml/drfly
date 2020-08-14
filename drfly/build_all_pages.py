@@ -22,9 +22,10 @@ def build_all( source_directory ):
         [subdirList.remove(d) for d in list(subdirList) if d is cfg['template'] ]
 
         for filename in fileList:
-            sourcefile = os.path.realpath( os.path.join(dirName, filename) )
-            result = build_page.build_html_json( sourcefile, source_directory )
-            print( result ) ## print here inside loop to get result while executing
+            if ( filename not in cfg['sourceexclude'] ): 
+                sourcefile = os.path.realpath( os.path.join(dirName, filename) )
+                result = build_page.build_html_json( sourcefile, source_directory )
+                print( result ) ## print here inside loop to get result while executing
 
     return result
 
