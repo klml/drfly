@@ -18,7 +18,7 @@ def gitpull(sourcedirectory):
         print('no git repo')
         return ['no git repo']
 
-    ## register current commit, before git pull,  
+    ## register current commit, before git pull,
     oldcommmit = repo.head.commit.tree
     repo_remotes_origin_pull = repo.remotes.origin.pull()
 
@@ -27,7 +27,7 @@ def gitpull(sourcedirectory):
 
     result = []
     # cant do this with a webservice,
-    # gitpull should also work without webhook.py depending http://webpy.org/ 
+    # gitpull should also work without webhook.py depending http://webpy.org/
     for updated_file in updated_files:
         parse_result = build_page.check_page_is_area(updated_file ,  sourcedirectory)
         result.extend(parse_result)

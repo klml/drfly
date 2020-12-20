@@ -18,7 +18,7 @@ urls = (
 app = web.application(urls, globals())
 
 # set source_directory
-# disallow changing source directory from web 
+# disallow changing source directory from web
 source_directory = sys.argv[2]
 cfg = config.config(source_directory)
 

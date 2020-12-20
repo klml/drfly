@@ -19,7 +19,7 @@ if __name__ == "__main__":
             if os.path.isfile(page_path):
                 source_directory    = os.getcwd()
                 print(build_page.check_page_is_area(page_path , source_directory))
-                
+
             if os.path.isdir(page_path):
                 build_all_pages.build_all(page_path)
                 print('pages build') ## result is printed in drfly/build_all_pages.py

@@ -4,7 +4,7 @@
 import codecs
 
 ## PROSErial
-# for rendering (template, menue etc) or html metatags are at the __bottom__ of the page and only __optional__ 
+# for rendering (template, menue etc) or html metatags are at the __bottom__ of the page and only __optional__
 # [PROSErial](https://github.com/klml/PROSErial))
 
 def splitproseserial(sourcefile, metaseparator):
@@ -12,7 +12,7 @@ def splitproseserial(sourcefile, metaseparator):
     try:
         with codecs.open(sourcefile , 'r', encoding="utf-8") as opensourcefile:
             source = opensourcefile.read()
-        return source.split(metaseparator)   
+        return source.split(metaseparator)
 
     except UnicodeDecodeError:
         return False

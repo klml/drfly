@@ -28,7 +28,7 @@ def render_prose_to_html(sourcefile, cfg, proserialsplit):
         return md.convert(proserialsplit[0])
 
     else:
-        # txt-files get rendered with newlines as breaks (```<br>```). 
+        # txt-files get rendered with newlines as breaks (```<br>```).
         return proserialsplit[0].replace('\n','<br>\n')
 
 
@@ -44,17 +44,17 @@ def render_html_into_template(source_directory, tmplData):
 
         html_path = tmplData['meta']['directory']['html'] + os.sep + tmplData['content']['slugs']['html']
 
-        html_file = codecs.open(html_path , 'w', encoding="utf-8")  
-        html_file.write(html_html) 
+        html_file = codecs.open(html_path , 'w', encoding="utf-8")
+        html_file.write(html_html)
         html_file.close()
         result.extend([html_path])
 
 
         json_json = json.dumps(tmplData)
         json_path = tmplData['meta']['directory']['html'] + os.sep + tmplData['content']['slugs']['json']
-        json_file = codecs.open(json_path , 'w', encoding="utf-8")  
-        json_file.write(json_json) 
-        json_file.close() 
+        json_file = codecs.open(json_path , 'w', encoding="utf-8")
+        json_file.write(json_json)
+        json_file.close()
         result.extend([json_path])
 
     return result
@@ -100,7 +100,7 @@ def check_page_is_area(page_name , source_directory):
     sourcefile  = os.path.realpath(source_directory) + os.path.sep + page_name
     areapath    = os.path.realpath(source_directory + os.path.sep + cfg['directory']['area'])
 
-    # force to create all pages, if area is changed 
+    # force to create all pages, if area is changed
     if areapath == os.path.commonpath([ areapath, sourcefile]):
         return build_all_pages.build_all(source_directory)
 
