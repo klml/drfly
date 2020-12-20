@@ -11,17 +11,16 @@ if __name__ == "__main__":
     if ( len( sys.argv[1:] ) == 0 ):
         source_directory    = os.getcwd()
         build_all_pages.build_all( source_directory )
-        result =  'pages build' ## result is printed in drfly/build_all_pages.py
+        print('pages build') ## result is printed in drfly/build_all_pages.py
 
     else:
         for page_path in sys.argv[1:] :
 
             if os.path.isfile( page_path ):
                 source_directory    = os.getcwd()
-                result = build_page.check_page_is_area( page_path , source_directory )
+                print(build_page.check_page_is_area( page_path , source_directory ))
                 
             if os.path.isdir( page_path ):
                 build_all_pages.build_all( page_path )
-                result =  'pages build' ## result is printed in drfly/build_all_pages.py
+                print('pages build') ## result is printed in drfly/build_all_pages.py
 
-    print(result)

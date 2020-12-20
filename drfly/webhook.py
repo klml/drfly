@@ -26,8 +26,7 @@ cfg = config.config( source_directory )
 class git_pull:
     def POST(self):
         if cfg['webhook']['gitpull']:
-            result = gitpull.gitpull( source_directory )
-            return result 
+            return gitpull.gitpull( source_directory )
 
 
 class render:
@@ -36,15 +35,14 @@ class render:
 
         # https://example.com/render?page=
         if cfg['webhook']['render'] and 'page' in getparam :
-            result = build_page.check_page_is_area( getparam['page'] , source_directory )
-            return result
+            return build_page.check_page_is_area( getparam['page'] , source_directory )
 
         # https://example.com/render?all
         if cfg['webhook']['renderall'] and 'all' in getparam :
             build_all_pages.build_all( source_directory )
-            result = "all pages rendered"
-            return result
+            return "all pages rendered"
 
 
 if __name__ == '__main__':
         app.run()
+

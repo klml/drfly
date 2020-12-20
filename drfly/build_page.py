@@ -25,13 +25,11 @@ def render_prose_to_html( sourcefile, cfg, proserialsplit ):
             extensions = cfg['markdown']['extensions'],
             extension_configs = cfg['markdown']['extension_configs']
             )
-        content_html = md.convert( proserialsplit[0] )
+        return md.convert( proserialsplit[0] )
 
     else:
         # txt-files get rendered with newlines as breaks (```<br>```). 
-        content_html = proserialsplit[0].replace('\n','<br>\n')
-
-    return content_html
+        return proserialsplit[0].replace('\n','<br>\n')
 
 
 def render_html_into_template( source_directory, tmplData ):
@@ -59,14 +57,12 @@ def render_html_into_template( source_directory, tmplData ):
         json_file.close() 
         result.extend( [json_path] )
 
-        return result
-
+    return result
 
 
 def build_html_json( sourcefile_path , source_directory ):
 
     cfg = config.config( source_directory )
-
 
     if not os.path.isfile( sourcefile_path ) :
         return [ sourcefile_path + ' does not exist' ]
@@ -76,7 +72,7 @@ def build_html_json( sourcefile_path , source_directory ):
     if os.path.commonprefix( ( os.path.realpath( sourcefile_path ), source_directory_realpath )) == source_directory_realpath :
 
         proserialsplit                         = proserial.splitproseserial( sourcefile_path, cfg['separator'] )
-        if proserialsplit is False :
+        if not proserialsplit :
             return [ sourcefile_path + ' is not a text file']
 
         meta                                    = get_meta_area.get_meta  ( sourcefile_path, source_directory_realpath, proserialsplit, cfg )
@@ -90,11 +86,11 @@ def build_html_json( sourcefile_path , source_directory ):
         tmplData['content']['source_git_meta']  = get_meta_area.get_source_git_meta( sourcefile_path, source_directory, meta['source_git_meta']  )
 
         tmplData['content']['main']             = render_prose_to_html( sourcefile_path, meta, proserialsplit )
-        result = render_html_into_template( source_directory, tmplData )
-        return result
+        return render_html_into_template( source_directory, tmplData )
 
     else:
         return [ sourcefile_path +  ' is an illegal path' ]
+
 
 def check_page_is_area( page_name , source_directory):
 
@@ -119,3 +115,4 @@ if __name__ == "__main__":
     result = check_page_is_area( sourcefile_path , source_directory )
     print( "result" )
     print( result )
+

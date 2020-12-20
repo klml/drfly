@@ -16,3 +16,4 @@ def splitproseserial( sourcefile, metaseparator ):
 
     except UnicodeDecodeError:
         return False
+

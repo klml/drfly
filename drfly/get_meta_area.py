@@ -133,3 +133,4 @@ def get_source_git_meta( sourcefile, config_source, source_git_meta_meta ):
 
     except:
         return
+

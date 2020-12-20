@@ -15,3 +15,4 @@ def config( source_directory ):
         config.update(    yaml.safe_load( open( config_local  ) ) )
 
     return config
+

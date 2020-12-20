@@ -11,8 +11,6 @@ import build_page
 
 def gitpull( sourcedirectory ):
 
-    result = []
-
     try:
         repo = git.Repo( sourcedirectory , search_parent_directories=True )
     except git.exc.InvalidGitRepositoryError:
@@ -27,9 +25,7 @@ def gitpull( sourcedirectory ):
     ## get new and changed files since commit before
     updated_files = repo.git.diff('--name-only', 'HEAD', oldcommmit ).split()
 
-    if len( updated_files ) is 0:
-        return result
-
+    result = []
     # cant do this with a webservice,
     # gitpull should also work without webhook.py depending http://webpy.org/ 
     for updated_file in updated_files:
@@ -38,5 +34,5 @@ def gitpull( sourcedirectory ):
     return result
 
 if __name__ == "__main__":
-    result = gitpull( sys.argv[1:][0] )
-    print( result )
+    print( gitpull( sys.argv[1:][0] ) )
+
