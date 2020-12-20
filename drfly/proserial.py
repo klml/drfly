@@ -10,7 +10,7 @@ import codecs
 def splitproseserial(sourcefile, metaseparator):
     ## try if file is text (like md, css, js, yaml) and not a binary (jpg, gif)
     try:
-        with codecs.open(sourcefile , 'r', encoding="utf-8") as opensourcefile:
+        with codecs.open(sourcefile, 'r', encoding="utf-8") as opensourcefile:
             source = opensourcefile.read()
         return source.split(metaseparator)
 

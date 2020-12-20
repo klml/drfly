@@ -22,7 +22,7 @@ def get_meta(sourcefile, source_directory_realpath,  proserial, meta):
         stepsourcedir += directory + os.sep
 
         ## avoid searching for yaml "under" source_directory
-        if os.path.commonprefix((stepsourcedir , source_directory_realpath)) == source_directory_realpath:
+        if os.path.commonprefix((stepsourcedir, source_directory_realpath)) == source_directory_realpath:
 
             ## define meta file
             # [Please use ".yaml" when possible.](https://yaml.org/faq.html)
@@ -31,13 +31,13 @@ def get_meta(sourcefile, source_directory_realpath,  proserial, meta):
             # Check if the metafile exists
             if (os.path.isfile(meta_directory_file)):
 
-                with open(meta_directory_file , 'r') as openmeta_directory_file:
+                with open(meta_directory_file, 'r') as openmeta_directory_file:
                     meta_directory = openmeta_directory_file.read()
                 meta.update(yaml.load(meta_directory, Loader=yaml.FullLoader))
 
     ## check if source file includes meta date
     try:
-        proserial_meta = yaml.load(proserial[1] , Loader=yaml.FullLoader)
+        proserial_meta = yaml.load(proserial[1], Loader=yaml.FullLoader)
         meta.update(proserial_meta)
 
     ## sourcefile-meta is no valid yaml
@@ -72,10 +72,10 @@ def get_areas(config_directory_area, config_sourceexclude, config_markdown, cfg)
     areas = {}
     for dirName, subdirList, fileList in os.walk(config_directory_area):
         ## exclude directories
-        [subdirList.remove(d) for d in list(subdirList) if d in config_sourceexclude ]
+        [subdirList.remove(d) for d in list(subdirList) if d in config_sourceexclude]
 
         for filename in fileList:
-            with codecs.open(os.path.join(dirName, filename) , 'r', encoding="utf-8") as openareafile:
+            with codecs.open(os.path.join(dirName, filename), 'r', encoding="utf-8") as openareafile:
                 areamd = openareafile.read()
 
             md = markdown.Markdown(
@@ -84,7 +84,7 @@ def get_areas(config_directory_area, config_sourceexclude, config_markdown, cfg)
                 )
             areahtml = md.convert(areamd)
 
-            areas[ os.path.splitext(filename)[0] ] = areahtml
+            areas[os.path.splitext(filename)[0]] = areahtml
 
     return areas
 
@@ -94,9 +94,9 @@ def get_slugs (sourcefile, source_directory_realpath, config_namespaceseparator)
     ## create target file slugs
     lemma, file_extension   = os.path.splitext(os.path.basename(sourcefile) )
     ## make a source directory relative path
-    contentdir              = os.path.dirname(sourcefile[ len(source_directory_realpath) +1  :]) ## + 1 to remove leading slash
+    contentdir              = os.path.dirname(sourcefile[len(source_directory_realpath) +1 :]) ## + 1 to remove leading slash
     # use source directories as __namespace__, with customizing namespaceseperators (```namespace:pagetitle```).
-    slugdir                 = contentdir.replace(os.sep , config_namespaceseparator)
+    slugdir                 = contentdir.replace(os.sep, config_namespaceseparator)
 
     ## slugs with directories need an trailings namespaceseparator
     if (len(contentdir ) > 0):
@@ -122,9 +122,9 @@ def get_source_git_meta(sourcefile, config_source, source_git_meta_meta):
 
         # https://git-scm.com/docs/pretty-formats
         source_git_meta = {}
-        source_git_meta['last_name']     = repo.git.log('-1', '--format=' + source_git_meta_meta['last_name_format'] , sourcefile)
-        source_git_meta['last_email']    = repo.git.log('-1', '--format=' + source_git_meta_meta['last_email_format'] , sourcefile)
-        source_git_meta['last_date']     = repo.git.log('-1', '--format=' + source_git_meta_meta['last_date_format'] , sourcefile)
+        source_git_meta['last_name']     = repo.git.log('-1', '--format=' + source_git_meta_meta['last_name_format'], sourcefile)
+        source_git_meta['last_email']    = repo.git.log('-1', '--format=' + source_git_meta_meta['last_email_format'], sourcefile)
+        source_git_meta['last_date']     = repo.git.log('-1', '--format=' + source_git_meta_meta['last_date_format'], sourcefile)
         source_git_meta['last_subject']  = repo.git.log('-1', '--format=' + source_git_meta_meta['last_subject_format'],  sourcefile)
 
         # TODO oldest_*
