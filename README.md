@@ -45,3 +45,8 @@ Get new commits with [webhook.py](drfly/webhook.py) (depends on [webpy.org](http
 pip3 install -r requirements-web.txt 
 python3.6 drfly/webhook.py 8080 /path/to/source/
 ```
+
+## config
+
+There is the global config [drfly/meta.global.yaml](drfly/meta.global.yaml).
+You can overwrite this values with a file `meta.yaml` in root-directory oder every sub-directory.
