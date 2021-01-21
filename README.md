@@ -12,8 +12,6 @@ So drfly provides:
 * include sourcefiles as __areas__ in templates (for menus, sidebars, trackingpixels).
 * define [HTML Title element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title) ```<title>``` from first markdown heading as ```pagetitle``` if it is missing in meta
 * non .md files (```.css```, ```.js``` or ```.txt```) get rendered with newlines as breaks (```<br>```).
-* render markdown to html pages and json.
-* using [Markdown Extra](https://python-markdown.github.io/extensions/extra/) with [Table of Contents](https://python-markdown.github.io/extensions/toc/), [WikiLinks](https://python-markdown.github.io/extensions/wikilinks/), [Sane Lists](https://python-markdown.github.io/extensions/sane_lists/) and [Admonition](https://python-markdown.github.io/extensions/admonition/).
 
 
 ## usage
@@ -50,3 +48,9 @@ python3.6 drfly/webhook.py 8080 /path/to/source/
 
 There is the global config [drfly/meta.global.yaml](drfly/meta.global.yaml).
 You can overwrite this values with a file `meta.yaml` in root-directory oder every sub-directory.
+
+## rendering
+
+Drfly renders html and json files with [Python-Markdown](https://python-markdown.github.io/) using [Markdown Extra](https://python-markdown.github.io/extensions/extra/) with [Table of Contents](https://python-markdown.github.io/extensions/toc/), [WikiLinks](https://python-markdown.github.io/extensions/wikilinks/), [Sane Lists](https://python-markdown.github.io/extensions/sane_lists/) and [Admonition](https://python-markdown.github.io/extensions/admonition/).
+
+You can add [Third-Party-Extensions](https://github.com/Python-Markdown/markdown/wiki/Third-Party-Extensions) in [config](#config) `markdown: extensions:`
