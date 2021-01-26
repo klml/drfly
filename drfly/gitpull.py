@@ -14,7 +14,7 @@ def gitpull(sourcedirectory):
     try:
         repo = git.Repo(sourcedirectory , search_parent_directories=True)
     except git.exc.InvalidGitRepositoryError:
-        # ~ TODO relaly dpobble cehc with webhook
+        # TODO really double check with webhook
         print('no git repo')
         return ['no git repo']
 
