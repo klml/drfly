@@ -24,7 +24,7 @@ def build_all(source_directory):
         for filename in fileList:
             if (filename not in cfg['sourceexclude']):
                 sourcefile = os.path.realpath(os.path.join(dirName, filename))
-                result = build_page.build_html_json(sourcefile, source_directory)
+                result = build_page.build_html_json(sourcefile, source_directory, cfg)
                 print(result) ## print here inside loop to get result while executing
 
     return result

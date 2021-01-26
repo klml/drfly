@@ -60,9 +60,7 @@ def render_html_into_template(source_directory, tmplData):
     return result
 
 
-def build_html_json(sourcefile_path, source_directory):
-
-    cfg = config.config(source_directory)
+def build_html_json(sourcefile_path, source_directory, cfg):
 
     if not os.path.isfile(sourcefile_path) :
         return [sourcefile_path + ' does not exist']
@@ -104,7 +102,7 @@ def check_page_is_area(page_name, source_directory):
     if areapath == os.path.commonpath([areapath, sourcefile]):
         return build_all_pages.build_all(source_directory)
 
-    return build_html_json(sourcefile, source_directory)
+    return build_html_json(sourcefile, source_directory, cfg)
 
 
 if __name__ == "__main__":
