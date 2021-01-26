@@ -14,7 +14,7 @@ import git
 def get_meta(sourcefile, source_directory_realpath,  proserial, meta):
 
     ## collect meta
-    # get metatdata from file meta.yaml in every directory in sourcepath
+    # get metadata from file meta.yaml in every directory in sourcepath
 
     stepsourcedir = ''
     for index, directory in enumerate(os.path.dirname(sourcefile).split(os.sep)):
@@ -35,7 +35,7 @@ def get_meta(sourcefile, source_directory_realpath,  proserial, meta):
                     meta_directory = openmeta_directory_file.read()
                 meta.update(yaml.load(meta_directory, Loader=yaml.FullLoader))
 
-    ## check if source file includes meta date
+    ## check if source file includes metadata
     try:
         proserial_meta = yaml.load(proserial[1], Loader=yaml.FullLoader)
         meta.update(proserial_meta)
