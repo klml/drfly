@@ -11,7 +11,7 @@ import git
 
 
 ## load serial date
-def get_meta(sourcefile, source_directory_realpath,  proserial, meta):
+def get_meta(sourcefile, source_directory_realpath, proserial, meta):
 
     ## collect meta
     # get metadata from file meta.yaml in every directory in sourcepath
