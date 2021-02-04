@@ -39,6 +39,7 @@ def get_meta(sourcefile, source_directory_realpath, proserial, meta):
     try:
         proserial_meta = yaml.load(proserial[1], Loader=yaml.FullLoader)
         meta.update(proserial_meta)
+        return meta
 
     ## sourcefile-meta is no valid yaml
     ## or
@@ -46,9 +47,7 @@ def get_meta(sourcefile, source_directory_realpath, proserial, meta):
     ## this is PROSErial conform
     ## TODO warn user
     except:
-        meta = meta
-
-    return meta
+        return meta
 
 
 def get_html_title_from_first_heading(proserial, meta):
