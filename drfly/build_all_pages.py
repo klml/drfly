@@ -12,10 +12,9 @@ import config
 def build_all(source_directory):
 
     cfg = config.config(source_directory)
-    source_directory_realpath = os.path.realpath(source_directory)
 
     # iterate source directory and build all html and json files
-    for dirName, subdirList, fileList in os.walk(source_directory_realpath, topdown=True):
+    for dirName, subdirList, fileList in os.walk(os.path.realpath(source_directory), topdown=True):
 
         ## exclude directories
         [subdirList.remove(d) for d in list(subdirList) if d in cfg['sourceexclude']]
