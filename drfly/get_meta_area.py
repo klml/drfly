@@ -10,8 +10,8 @@ import re
 import git
 
 
-## load serial date
-def get_meta(sourcefile, source_directory_realpath, proserial, meta):
+## load serial data
+def get_meta_tree(sourcefile, source_directory_realpath, meta):
 
     ## collect meta
     # get metadata from file meta.yaml in every directory in sourcepath
@@ -34,7 +34,10 @@ def get_meta(sourcefile, source_directory_realpath, proserial, meta):
                 with open(meta_directory_file, 'r') as openmeta_directory_file:
                     meta_directory = openmeta_directory_file.read()
                 meta.update(yaml.load(meta_directory, Loader=yaml.FullLoader))
+    return meta
 
+
+def get_meta_file(sourcefile, proserial, meta):
     ## check if source file includes metadata
     try:
         proserial_meta = yaml.load(proserial[1], Loader=yaml.FullLoader)
