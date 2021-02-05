@@ -73,8 +73,8 @@ def build_html_json(sourcefile_path, source_directory, cfg):
         if not proserialsplit :
             return [sourcefile_path + ' is not a text file']
 
-        meta                                    = get_meta_area.get_meta_tree  (sourcefile_path, source_directory_realpath, cfg)
-        meta                                    = get_meta_area.get_meta_file  (sourcefile_path,  proserialsplit, meta)
+        meta                                    = get_meta_area.get_meta_tree(sourcefile_path, source_directory_realpath, cfg)
+        meta                                    = get_meta_area.get_meta_file(sourcefile_path, proserialsplit, meta)
         meta_path                               = source_directory_realpath + os.sep + meta['directory']['area']
 
         # template data
