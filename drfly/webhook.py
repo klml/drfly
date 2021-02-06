@@ -33,11 +33,11 @@ class render:
     def GET(self):
         getparam    = web.input(_method='get')
 
-        # https://example.com/render?page=
+        # http://localhost:8080/render?page=
         if cfg['webhook']['render'] and 'page' in getparam :
             return build_page.check_page_is_area(getparam['page'], source_directory)
 
-        # https://example.com/render?all
+        # http://localhost:8080/render?all
         if cfg['webhook']['renderall'] and 'all' in getparam :
             build_all_pages.build_all(source_directory)
             return "all pages rendered"

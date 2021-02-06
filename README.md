@@ -34,7 +34,7 @@ Render single page:
 drfly /path/to/source/index.md 
 ```
 
-## web 
+### web
 You can use git{hu|la}b as content webinterface and versioning system.
 
 Get new commits with [webhook.py](drfly/webhook.py) (depends on [webpy.org](http://webpy.org))
@@ -44,7 +44,12 @@ pip3 install -r requirements-web.txt
 python3.6 drfly/webhook.py 8080 /path/to/source/
 ```
 
-## config
+* Render a single page: `http://localhost:8080/render?page=index.md`
+* Render all pages, by setting "webhook: renderall" `true` in [config](#config) and: `http://localhost:8080/render?all`
+* Pull git repository and render all changed pages `curl -X PO http://localhost:8080/gitpull`
+
+
+### config
 
 There is the global config [drfly/meta.global.yaml](drfly/meta.global.yaml).
 You can overwrite this values with a file `meta.yaml` in root-directory oder every sub-directory.
