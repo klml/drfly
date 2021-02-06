@@ -6,7 +6,6 @@ import pystache
 import os
 import sys
 import codecs
-import copy
 
 import markdown
 from markdown.extensions import Extension
@@ -74,7 +73,7 @@ def build_html_json(sourcefile_path, source_directory, cfg):
         if not proserialsplit :
             return [sourcefile_path + ' is not a text file']
 
-        meta                                    = copy.deepcopy(cfg)
+        meta                                    = {**cfg} ## merge cfg into meta
         meta                                    = get_meta_area.get_meta_tree(sourcefile_path, source_directory_realpath, meta)
         meta                                    = get_meta_area.get_meta_file(sourcefile_path, proserialsplit, meta)
         meta_path                               = source_directory_realpath + os.sep + meta['directory']['area']
