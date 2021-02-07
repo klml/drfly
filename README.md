@@ -52,7 +52,7 @@ python3.6 drfly/webhook.py 8080 /path/to/source/
 ### config
 
 There is the global config [drfly/meta.global.yaml](drfly/meta.global.yaml).
-You can overwrite this values with a file `meta.yaml` in root-directory oder every sub-directory.
+You can overwrite this values with a file `meta.yaml` in the root-directory oder every sub-directory.
 
 ## rendering
 
