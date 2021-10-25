@@ -57,6 +57,8 @@ def render_html_into_template(source_directory, tmplData):
         json_file.close()
         result.extend([json_path])
 
+        result = json.dumps(result)
+
     return result
 
 
