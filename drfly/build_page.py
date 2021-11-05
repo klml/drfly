@@ -12,7 +12,7 @@ from markdown.extensions import Extension
 
 import config
 import proserial
-import get_meta_area
+import get_meta
 import get_area
 import build_all_pages
 
@@ -77,16 +77,16 @@ def build_html_json(sourcefile_path, source_directory, cfg):
             return [sourcefile_path + ' is not a text file']
 
         meta                                    = {**cfg} ## merge cfg into meta
-        meta                                    = get_meta_area.get_meta_tree(sourcefile_path, source_directory_realpath, meta)
-        meta                                    = get_meta_area.get_meta_file(sourcefile_path, proserialsplit, meta)
+        meta                                    = get_meta.get_meta_tree(sourcefile_path, source_directory_realpath, meta)
+        meta                                    = get_meta.get_meta_file(sourcefile_path, proserialsplit, meta)
         meta_path                               = source_directory_realpath + os.sep + meta['directory']['area']
 
         # template data
         tmplData = {}
-        tmplData['meta']                        = get_meta_area.get_html_title_from_first_heading(proserialsplit, meta)
+        tmplData['meta']                        = get_meta.get_html_title_from_first_heading(proserialsplit, meta)
         tmplData['content']                     = get_area.get_areas(meta_path, meta['sourceexclude'], meta['markdown'], cfg)
-        tmplData['content']['slugs']            = get_meta_area.get_slugs(sourcefile_path, source_directory_realpath, meta['namespaceseparator'])
-        tmplData['content']['source_git_meta']  = get_meta_area.get_source_git_meta(sourcefile_path, source_directory, meta['source_git_meta'] )
+        tmplData['content']['slugs']            = get_meta.get_slugs(sourcefile_path, source_directory_realpath, meta['namespaceseparator'])
+        tmplData['content']['source_git_meta']  = get_meta.get_source_git_meta(sourcefile_path, source_directory, meta['source_git_meta'] )
 
         tmplData['content']['main']             = render_prose_to_html(sourcefile_path, meta, proserialsplit)
         return render_html_into_template(source_directory, tmplData)
