@@ -108,14 +108,3 @@ def check_page_is_area(page_name, source_directory):
         return build_all_pages.build_all(source_directory)
 
     return build_html_json(sourcefile, source_directory, cfg)
-
-
-if __name__ == "__main__":
-
-    sourcefile_path     = sys.argv[1:][0]
-    source_directory    = os.getcwd()
-
-    result = check_page_is_area(sourcefile_path, source_directory)
-    print("result")
-    print(result)
-
