@@ -101,7 +101,7 @@ def check_page_is_area(page_name, source_directory):
 
     # add dedicated spourcefile to the given pagename
     sourcefile  = os.path.realpath(source_directory) + os.path.sep + page_name
-    areapath    = sourcefile + cfg['directory']['area']
+    areapath    = os.path.realpath(source_directory) + os.path.sep + cfg['directory']['area']
 
     # force to create all pages, if area is changed
     if areapath == os.path.commonpath([areapath, sourcefile]):
