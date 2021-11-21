@@ -18,7 +18,7 @@ if __name__ == "__main__":
         for page_path in sys.argv[1:] :
 
             if os.path.isfile(page_path):
-                print(build_page.check_page_is_area(page_path , source_directory))
+                print(path_router.check_page_is_area(page_path , source_directory))
 
             if os.path.isdir(page_path):
                 path_router.build_all(page_path)
