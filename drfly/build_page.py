@@ -14,7 +14,7 @@ import config
 import proserial
 import get_meta
 import get_area
-import build_all_pages
+import path_router
 
 
 def render_prose_to_html(sourcefile, cfg, proserialsplit):
@@ -105,6 +105,6 @@ def check_page_is_area(page_name, source_directory):
 
     # force to create all pages, if area is changed
     if areapath == os.path.commonpath([areapath, sourcefile]):
-        return build_all_pages.build_all(source_directory)
+        return path_router.build_all(source_directory)
 
     return build_html_json(sourcefile, source_directory, cfg)

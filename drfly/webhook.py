@@ -7,7 +7,7 @@ import web
 
 import config
 import build_page
-import build_all_pages
+import path_router
 import gitpull
 
 
@@ -39,7 +39,7 @@ class render:
 
         # http://localhost:8080/render?all
         if cfg['webhook']['renderall'] and 'all' in getparam :
-            build_all_pages.build_all(source_directory)
+            path_router.build_all(source_directory)
             return "all pages rendered"
 
 
