@@ -27,7 +27,3 @@ def build_all(source_directory):
                 print(result) ## print here inside loop to get result while executing
 
     return result
-
-if __name__ == "__main__":
-    build_all(os.getcwd())
-
