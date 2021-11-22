@@ -2,7 +2,6 @@
 # coding: utf-8
 
 import sys, os
-import build_page
 import path_router
 
 if __name__ == "__main__":
@@ -18,7 +17,7 @@ if __name__ == "__main__":
         for page_path in sys.argv[1:] :
 
             if os.path.isfile(page_path):
-                print(path_router.check_page_is_area(page_path , source_directory))
+                print(path_router.build_single(page_path , source_directory))
 
             if os.path.isdir(page_path):
                 path_router.build_all(page_path)

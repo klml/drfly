@@ -6,7 +6,6 @@ import os, sys, git
 import web
 
 import config
-import build_page
 import path_router
 import gitpull
 
@@ -35,7 +34,7 @@ class render:
 
         # http://localhost:8080/render?page=
         if cfg['webhook']['render'] and 'page' in getparam :
-            return build_page.check_page_is_area(getparam['page'], source_directory)
+            return path_router.build_single(getparam['page'], source_directory)
 
         # http://localhost:8080/render?all
         if cfg['webhook']['renderall'] and 'all' in getparam :

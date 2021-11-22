@@ -8,9 +8,7 @@ import argparse
 import build_page
 import config
 
-def check_page_is_area(page_name, source_directory):
-
-    cfg = config.config(source_directory)
+def check_page_is_area(page_name, source_directory, cfg):
 
     # add dedicated spourcefile to the given pagename
     sourcefile  = os.path.realpath(source_directory) + os.path.sep + page_name
@@ -18,9 +16,9 @@ def check_page_is_area(page_name, source_directory):
 
     # force to create all pages, if area is changed
     if areapath == os.path.commonpath([areapath, sourcefile]):
-        return build_all(source_directory)
+        return True
 
-    return build_page.build_html_json(sourcefile, source_directory, cfg)
+    return
 
 
 def build_all(source_directory):
@@ -39,5 +37,18 @@ def build_all(source_directory):
                 sourcefile = os.path.realpath(os.path.join(dirName, filename))
                 result = build_page.build_html_json(sourcefile, source_directory, cfg)
                 print(result) ## print here inside loop to get result while executing
+
+    return
+
+
+def build_single(page_name, source_directory):
+
+    cfg = config.config(source_directory)
+
+    if check_page_is_area(page_name, source_directory, cfg):
+        build_all(source_directory)
+        result = page_name + " is a area, so all pages were build"
+    else:
+        result = build_page.build_html_json(page_name, source_directory, cfg)
 
     return result
