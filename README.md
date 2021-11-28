@@ -7,7 +7,7 @@ So drfly provides:
 
 * __meta information__ for rendering (template, menue etc) or html metatags are at the __bottom__ of the page and only __optional__ (tried to use my own standard [PROSErial](https://github.com/klml/PROSErial)).
 * the meta information is defined in `./meta.yaml` or in every directory (`meta.yaml`) or in the page  
-* simple one-file templating with mustache, for plain websites (not so for blogs or shops etc.)  
+* simple one-file templating with mustache, for plain websites.
 * use source directories as __namespace__, with customizing namespaceseperators (```namespace:pagetitle```).
 * include sourcefiles as __areas__ in templates (for menus, sidebars, trackingpixels).
 * define [HTML Title element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title) ```<title>``` from first markdown heading as ```pagetitle``` if it is missing in meta
