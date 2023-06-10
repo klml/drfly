@@ -1,5 +1,5 @@
 gitsource: false
-sourceexclude: '.git'
+sourceexclude: ['.git','robots.txt']
 publish: true
 separator: "\n#!yaml"
 namespaceseparator: ":"
