@@ -10,7 +10,7 @@ So drfly provides:
 * simple one-file templating with mustache, for plain websites.
 * use source directories as __namespace__, with customizing namespaceseperators (```namespace:pagetitle```).
 * include sourcefiles as __areas__ in templates (for menus, sidebars, trackingpixels).
-* define [HTML Title element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title) ```<title>``` from first markdown heading as ```pagetitle``` if it is missing in meta
+* define [HTML Title element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title) ```<title>``` from first markdown heading as ```pagetitle``` if it is missing in meta (a function you have in [MkDocs](https://github.com/mkdocs/mkdocs/blob/master/docs/user-guide/writing-your-docs.md#meta-data)).
 * non .md files (```.css```, ```.js``` or ```.txt```) get rendered with newlines as breaks (```<br>```).
 * render specific files.
 
