@@ -6,7 +6,7 @@ import git
 import os
 import sys
 
-import build_page
+import path_router
 
 
 def gitpull(sourcedirectory):
@@ -29,7 +29,7 @@ def gitpull(sourcedirectory):
     # cant do this with a webservice,
     # gitpull should also work without webhook.py depending http://webpy.org/
     for updated_file in updated_files:
-        parse_result = build_page.build_single(updated_file ,  sourcedirectory)
+        parse_result = path_router.build_single(updated_file ,  sourcedirectory)
         result.extend(parse_result)
     return result
 
