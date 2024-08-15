@@ -14,6 +14,8 @@ So drfly provides:
 * non .md files (```.css```, ```.js``` or ```.txt```) get rendered with newlines as breaks (```<br>```).
 * render specific files.
 
+When I build sites for other people I use [hugo](https://gohugo.io/).
+But then I miss Wikilinks and all the other features of [Python-Markdown](https://python-markdown.github.io).
 
 ## usage
 
