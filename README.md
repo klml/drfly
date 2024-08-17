@@ -12,7 +12,6 @@ So drfly provides:
 * include sourcefiles as __areas__ in templates (for menus, sidebars, trackingpixels).
 * define [HTML Title element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title) ```<title>``` from first markdown heading as ```pagetitle``` if it is missing in meta (a function you have in [MkDocs](https://github.com/mkdocs/mkdocs/blob/master/docs/user-guide/writing-your-docs.md#meta-data)).
 * non .md files (```.css```, ```.js``` or ```.txt```) get rendered with newlines as breaks (```<br>```).
-* render specific files.
 
 When I build sites for other people I use [hugo](https://gohugo.io/).
 But then I miss Wikilinks and all the other features of [Python-Markdown](https://python-markdown.github.io).
