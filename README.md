@@ -6,7 +6,7 @@ There are many other and better [staticsitegenerators](http://staticsitegenerato
 So drfly provides:
 
 * the __meta information__ for rendering (template, menue etc) or html metatags are defined
-    * in `./meta.yaml` at the contentroot, like configuration files in most other ssg like [hugo](https://gohugo.io/getting-started/configuration/).
+    * in `./meta.yaml` in the contentroot, like configuration files in most other ssg like [hugo](https://gohugo.io/getting-started/configuration/).
     * but __additionally__ in every directory (`meta.yaml`)
     * or inside the page as [jekylleske front matter](https://jekyllrb.com/docs/front-matter/), but at the __bottom__ of the page and only __optional__ (tried to use my own standard [PROSErial](https://github.com/klml/PROSErial)).
 * the document or __page title__ is defined with the __first H1__ and is optional.
@@ -20,7 +20,7 @@ I would love using [Pandoc for this](https://wstyler.ucsd.edu/posts/pandoc_websi
 * non .md files (```.css```, ```.js``` or ```.txt```) get rendered with newlines as breaks (```<br>```).
 
 When I build sites for other people I use [hugo](https://gohugo.io/).
-But then I miss ```[[```Wikilinks```]]``` of [Python-Markdown](https://python-markdown.github.io).
+But then I miss ```[[```Wikilinks```]]``` from [Python-Markdown](https://python-markdown.github.io).
 
 
 ## usage
