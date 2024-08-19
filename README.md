@@ -12,12 +12,15 @@ So drfly provides:
 * include sourcefiles in templates (for menus, sidebars, trackingpixels). Instead of defining menus in abstract conifg files.
 * simple one-file templating with mustache, for plain websites. Even the simple [hugo layout templates](https://gohugo.io/templates/) drives me crazy.
 I would love using [Pandoc for this](https://wstyler.ucsd.edu/posts/pandoc_website.html).
-* define [HTML Title element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title) ```<title>``` from first markdown heading as ```pagetitle``` if it is missing in meta (a function you have in [MkDocs](https://github.com/mkdocs/mkdocs/blob/master/docs/user-guide/writing-your-docs.md#meta-data)).
+* the document or __page title__ is defined with the __first H1__ and is optional.
+Most other ssg define the pagetitle in the front matter, but this is complicated and makes front matter mandatory. HTML headings, are part already a part of the document. So I need this:
+    * define [HTML Title element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title) ```<title>``` from first markdown heading as ```pagetitle``` if it is missing in meta (a function you have in [MkDocs](https://github.com/mkdocs/mkdocs/blob/master/docs/user-guide/writing-your-docs.md#meta-data)).
+    * [toc_depth range](https://python-markdown.github.io/extensions/toc/#usage) to exclude H1 from toc.
 * use source directories as __namespace__, with customizing namespaceseperators (```namespace:pagetitle```) and not only ```/```.
 * non .md files (```.css```, ```.js``` or ```.txt```) get rendered with newlines as breaks (```<br>```).
 
 When I build sites for other people I use [hugo](https://gohugo.io/).
-But then I miss ```[[```Wikilinks```]]``` and [toc_depth range](https://python-markdown.github.io/extensions/toc/#usage) of [Python-Markdown](https://python-markdown.github.io).
+But then I miss ```[[```Wikilinks```]]``` of [Python-Markdown](https://python-markdown.github.io).
 
 
 ## usage
