@@ -9,13 +9,13 @@ So drfly provides:
     * in `./meta.yaml` at the contentroot, like configuration files in most other ssg like [hugo](https://gohugo.io/getting-started/configuration/).
     * but __additionally__ in every directory (`meta.yaml`)
     * or inside the page as [jekylleske front matter](https://jekyllrb.com/docs/front-matter/), but at the __bottom__ of the page and only __optional__ (tried to use my own standard [PROSErial](https://github.com/klml/PROSErial)).
-* include sourcefiles in templates (for menus, sidebars, trackingpixels). Instead of defining menus in abstract conifg files.
-* simple one-file templating with mustache, for plain websites. Even the simple [hugo layout templates](https://gohugo.io/templates/) drives me crazy.
-I would love using [Pandoc for this](https://wstyler.ucsd.edu/posts/pandoc_website.html).
 * the document or __page title__ is defined with the __first H1__ and is optional.
 Most other ssg define the pagetitle in the front matter, but this is complicated and makes front matter mandatory. HTML headings, are part already a part of the document. So I need this:
     * define [HTML Title element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title) ```<title>``` from first markdown heading as ```pagetitle``` if it is missing in meta (a function you have in [MkDocs](https://github.com/mkdocs/mkdocs/blob/master/docs/user-guide/writing-your-docs.md#meta-data)).
     * [toc_depth range](https://python-markdown.github.io/extensions/toc/#usage) to exclude H1 from toc.
+* simple one-file templating with mustache, for plain websites. Even the simple [hugo layout templates](https://gohugo.io/templates/) drives me crazy.
+I would love using [Pandoc for this](https://wstyler.ucsd.edu/posts/pandoc_website.html).
+* include sourcefiles in templates (for menus, sidebars, trackingpixels). Instead of defining menus in abstract conifg files.
 * use source directories as __namespace__, with customizing namespaceseperators (```namespace:pagetitle```) and not only ```/```.
 * non .md files (```.css```, ```.js``` or ```.txt```) get rendered with newlines as breaks (```<br>```).
 
