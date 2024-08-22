@@ -15,7 +15,7 @@ Most other ssg define the pagetitle in the front matter, but this is complicated
     * [toc_depth range](https://python-markdown.github.io/extensions/toc/#usage) to exclude H1 from toc.
 * simple one-file templating with mustache, for plain websites. Even the simple [hugo layout templates](https://gohugo.io/templates/) drives me crazy.
 I would love using [Pandoc for this](https://wstyler.ucsd.edu/posts/pandoc_website.html).
-* include sourcefiles in templates (for menus, sidebars, trackingpixels). Instead of defining menus in abstract conifg files.
+* include sourcefiles in templates (for menus, sidebars, trackingpixels). Instead of defining menus in abstract config files.
 * use source directories as __namespace__, with customizing namespaceseperators (```namespace:pagetitle```) and not only ```/```.
 * non .md files (```.css```, ```.js``` or ```.txt```) get rendered with newlines as breaks (```<br>```).
 
