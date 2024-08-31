@@ -18,6 +18,8 @@ I would love using [Pandoc for this](https://wstyler.ucsd.edu/posts/pandoc_websi
 * include sourcefiles in templates (for menus, sidebars, trackingpixels). Instead of defining menus in abstract config files.
 * use source directories as __namespace__, with customizing namespaceseperators (```namespace:pagetitle```) and not only ```/```.
 * non .md files (```.css```, ```.js``` or ```.txt```) get rendered with newlines as breaks (```<br>```).
+* create single pages, not always all pages at once.
+
 
 When I build sites for other people I use [hugo](https://gohugo.io/).
 But then I miss ```[[```Wikilinks```]]``` from [Python-Markdown](https://python-markdown.github.io).
