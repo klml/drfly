@@ -47,7 +47,7 @@ def build_single(page_name, source_directory):
 
     if check_page_is_area(page_name, source_directory, cfg):
         build_all(source_directory)
-        result = page_name + " is a area, so all pages were build"
+        result = page_name + " is an area, so all pages were build"
     else:
         result = build_page.build_html_json(page_name, source_directory, cfg)
 
