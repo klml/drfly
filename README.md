@@ -13,6 +13,7 @@ So drfly provides:
 Most other ssg define the pagetitle in the front matter, but this is complicated and makes front matter mandatory. HTML headings, are part already a part of the document. So I need this:
     * define [HTML Title element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title) ```<title>``` from first markdown heading as ```pagetitle``` if it is missing in meta (a function you have in [MkDocs](https://github.com/mkdocs/mkdocs/blob/master/docs/user-guide/writing-your-docs.md#meta-data)).
     * [toc_depth range](https://python-markdown.github.io/extensions/toc/#usage) to exclude H1 from toc.
+* URLs with no mandatatory trailing slash.
 * simple one-file templating with mustache, for plain websites. Even the simple [hugo layout templates](https://gohugo.io/templates/) drives me crazy.
 I would love using [Pandoc for this](https://wstyler.ucsd.edu/posts/pandoc_website.html).
 * include sourcefiles in templates (for menus, sidebars, trackingpixels). Instead of defining menus in abstract config files.
