@@ -1,4 +1,4 @@
-Markdown==3.5
+Markdown==3.8.1
 markdown-extra==1.0.1
 mdx_wikilink_plus==1.4.1
 pystache==0.6.5
