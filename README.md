@@ -4,9 +4,9 @@ static website generator powered by Python, YAML, [Python-Markdown](https://pyth
 
 There are many other and better [staticsitegenerators](http://staticsitegenerators.net).
 [hugo](https://gohugo.io/) ist state of the art, but then I miss ```[[Wikilinks]]``` from [Python-Markdown](https://python-markdown.github.io/extensions/wikilinks/).
-[MkDocs](https://www.mkdocs.org/) is using Python-Markdown, with ```[[Wikilinks]]```, [toc_depth range](https://python-markdown.github.io/extensions/toc/#usage) to exclude H1 from toc, [level 1 Markdown header on the first line](https://github.com/mkdocs/mkdocs/blob/master/docs/user-guide/writing-your-docs.md#meta-data).
+I love [MkDocs](https://www.mkdocs.org/), there I have Python-Markdown with ```[[Wikilinks]]```, [toc_depth range](https://python-markdown.github.io/extensions/toc/#usage) to exclude H1 from toc, [level 1 Markdown header on the first line](https://github.com/mkdocs/mkdocs/blob/master/docs/user-guide/writing-your-docs.md#meta-data).
 
-But I still these features:
+But I still miss these features:
 
 * URLs with no mandatory trailing slash.
 * the __meta information__ for rendering (template, menue etc) or html metatags are defined
