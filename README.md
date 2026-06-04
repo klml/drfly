@@ -23,7 +23,7 @@ I would love using [Pandoc for this](https://wstyler.ucsd.edu/posts/pandoc_websi
 
 
 When I build sites for other people I use [hugo](https://gohugo.io/).
-But then I miss ```[[```Wikilinks```]]``` from [Python-Markdown](https://python-markdown.github.io).
+But then I miss ```[[```Wikilinks```]]``` from [Python-Markdown](https://python-markdown.github.io/extensions/wikilinks/).
 
 
 ## usage
