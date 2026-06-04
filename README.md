@@ -2,28 +2,23 @@
 
 static website generator powered by Python, YAML, [Python-Markdown](https://python-markdown.github.io) and [mustache](https://github.com/defunkt/pystache).
 
-There are many other and better [staticsitegenerators](http://staticsitegenerators.net), but I missed some features.
-So drfly provides:
+There are many other and better [staticsitegenerators](http://staticsitegenerators.net).
+[hugo](https://gohugo.io/) ist state of the art, but then I miss ```[[Wikilinks]]``` from [Python-Markdown](https://python-markdown.github.io/extensions/wikilinks/).
+[MkDocs](https://www.mkdocs.org/) is using Python-Markdown, with ```[[Wikilinks]]```, [toc_depth range](https://python-markdown.github.io/extensions/toc/#usage) to exclude H1 from toc, [level 1 Markdown header on the first line](https://github.com/mkdocs/mkdocs/blob/master/docs/user-guide/writing-your-docs.md#meta-data).
 
+But I still these features:
+
+* URLs with no mandatory trailing slash.
 * the __meta information__ for rendering (template, menue etc) or html metatags are defined
     * in `./meta.yaml` in the contentroot, like configuration files in most other ssg like [hugo](https://gohugo.io/getting-started/configuration/).
     * but __additionally__ in every directory (`meta.yaml`)
     * or inside the page as [jekylleske front matter](https://jekyllrb.com/docs/front-matter/), but at the __bottom__ of the page and only __optional__ (tried to use my own standard [PROSErial](https://codeberg.org/klml/proserial)).
-* the document or __page title__ is defined with the __first H1__ and is optional.
-Most other ssg define the pagetitle in the front matter, but this is complicated and makes front matter mandatory. HTML headings, are part already a part of the document. So I need this:
-    * define [HTML Title element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title) ```<title>``` from first markdown heading as ```pagetitle``` if it is missing in meta (a function you have in [MkDocs](https://github.com/mkdocs/mkdocs/blob/master/docs/user-guide/writing-your-docs.md#meta-data)).
-    * [toc_depth range](https://python-markdown.github.io/extensions/toc/#usage) to exclude H1 from toc.
-* URLs with no mandatory trailing slash.
-* simple one-file templating with mustache, for plain websites. Even the simple [hugo layout templates](https://gohugo.io/templates/) drives me crazy.
-I would love using [Pandoc for this](https://wstyler.ucsd.edu/posts/pandoc_website.html).
 * include sourcefiles in templates (for menus, sidebars, trackingpixels). Instead of defining menus in abstract config files.
 * use source directories as __namespace__, with customizing namespaceseperators (```namespace:pagetitle```) and not only ```/```.
-* non .md files (```.css```, ```.js``` or ```.txt```) get rendered with newlines as breaks (```<br>```).
+* non .md files (```.css```, ```.js``` or ```.txt```) get [rendered with newlines as breaks](https://python-markdown.github.io/extensions/nl2br/) (```<br>```).
+* simple one-file templating with mustache, for plain websites. Even the simple [hugo layout templates](https://gohugo.io/templates/) drives me crazy.
+I would love using [Pandoc for this](https://wstyler.ucsd.edu/posts/pandoc_website.html).
 * create single pages, not always all pages at once.
-
-
-When I build sites for other people I use [hugo](https://gohugo.io/).
-But then I miss ```[[```Wikilinks```]]``` from [Python-Markdown](https://python-markdown.github.io/extensions/wikilinks/).
 
 
 ## usage
